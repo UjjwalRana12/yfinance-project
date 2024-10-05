@@ -2,7 +2,6 @@ import yfinance as yf
 import matplotlib.pyplot as plt
 import pandas as pd
 
-# Get user inputs
 ticker_input = input("Enter the stock ticker (e.g., AAPL, TSLA): ").upper()
 period_input = input("Enter the time period (e.g., '1mo', '3mo', '1y'): ")
 file_name = input("Enter the name of the Excel file to save the data (e.g., 'stock_data.xlsx'): ")
@@ -58,6 +57,3 @@ try:
 
 except Exception as e:
     print(f"An error occurred: {e}")
-
-    #minute changes
-    
