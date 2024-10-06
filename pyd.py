@@ -89,7 +89,7 @@ try:
 
         
         if len(filtered_data_list) > 0:
-            # Concatenate the filtered data into a single DataFrame
+            
             filtered_data = pd.concat(filtered_data_list, axis=0)
             print(f"Stocks with closing prices in the range {lower_bound} - {upper_bound}:")
             print(filtered_data[['Ticker', 'Close']])
