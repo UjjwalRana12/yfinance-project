@@ -1,18 +1,18 @@
 import yfinance as yf
 import pandas as pd
 
-# Ticker mapping for renamed companies or common issues with tickers
+
 TICKER_MAPPING = {
-    "FB": "META",  # Facebook changed its ticker to META
-    # You can add more mappings here as needed
+    "FB": "META",  
+    
 }
 
 
 def fetch_stock_history(ticker: str, period: str) -> pd.DataFrame:
-    # Check for ticker mapping
-    ticker = TICKER_MAPPING.get(ticker, ticker)  # Replace ticker if mapped
+    
+    ticker = TICKER_MAPPING.get(ticker, ticker) 
 
-    # Fetch stock history from yfinance
+    
     stock = yf.Ticker(ticker)
     hist = stock.history(period=period)
 
@@ -29,7 +29,7 @@ def filter_stocks_by_price(tickers: list, period: str, lower_bound: float, upper
             hist = fetch_stock_history(ticker, period)
             hist['Ticker'] = ticker
             
-            # Debug: Print the last closing price for the ticker
+            
             print(f"{ticker} last close price: {hist['Close'].iloc[-1]}")
 
             filtered_data = hist[(hist['Close'] >= lower_bound) & (hist['Close'] <= upper_bound)]
